@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Code Quest</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+</head>
+<body>
+
+    <section id="page-welcome" class="view-container">
+        <div class="welcome-box">
+            <div class="logo">🐍</div>
+            <h1>Python Code Quest</h1>
+            <p>ฝึกเขียนโค้ด Python ผ่านเกมสุดท้าทาย</p>
+            
+            <div class="input-group">
+                <input type="text" id="player-name" placeholder="กรอกชื่อ-นามสกุลของคุณ" autocomplete="off">
+                <button id="btn-start" class="btn-primary">Start Game</button>
+            </div>
+            <p id="system-status" class="status-loading">⏳ กำลังเตรียมระบบ Python...</p>
+        </div>
+    </section>
+
+    <section id="page-game" class="view-container hidden">
+        <header class="game-header">
+            <div class="player-info">👤 ผู้เล่น: <span id="display-name">Guest</span></div>
+            <div class="progress-container">
+                <div id="progress-bar" style="width: 0%"></div>
+            </div>
+        </header>
+
+        <main class="game-layout">
+            <aside class="quest-panel">
+                <h2 id="q-title">Level Title</h2>
+                <div class="quest-content">
+                    <p id="q-desc">Description...</p>
+                    <div class="expected-box">
+                        <small>Output ที่ต้องการ:</small>
+                        <code id="target-output">...</code>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="code-panel">
+                <textarea id="python-editor" spellcheck="false" placeholder="# เขียนโค้ด Python ของคุณที่นี่..."></textarea>
+                
+                <div class="control-bar">
+                    <button id="btn-run" class="btn-run">▶ Run & Check</button>
+                    <button id="btn-next" class="btn-next" disabled>Next Level ➝</button>
+                </div>
+
+                <div class="console-wrapper">
+                    <div id="console-output" class="console">
+                        > รอการรันโค้ด...
+                    </div>
+                </div>
+            </section>
+        </main>
+    </section>
+
+    <script src="questions.js"></script> <script src="script.js"></script>    </body>
+</html>
